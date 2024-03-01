@@ -20,8 +20,8 @@ app.post("/authenticate", async (req, res) => {
       { headers: { "private-key": process.env.URL } }
     );
     return res.status(r.status).json(r.data);
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    console.log(e);
     return res.status(e.response.status).json(e.response.data);
   }
 });
